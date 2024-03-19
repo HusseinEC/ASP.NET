@@ -1,0 +1,44 @@
+﻿@page
+@model WebApp.Pages.SignInModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<section id="signin">
+    <div class="container">
+        <form method="post">
+            <h1>Welcome Back</h1>
+            <p>Don't have an account yet? <a asp-page="/SignIn">Sign Up here</a></p>
+
+            <div class="content">
+                <div id="form-email" class="input-group">
+                    <label asp-for="@Model.Form.Email"></label>
+                    <span asp-validation-for="@Model.Form.Email"></span>
+                    <input asp-for="@Model.Form.Email" />
+                </div>
+                <div id="form-password" class="input-group">
+                    <label asp-for="@Model.Form.Password"></label>
+                    <span asp-validation-for="@Model.Form.Password"></span>
+                    <input asp-for="@Model.Form.Password" />
+                </div>
+                <div id="form-remember" class="checkbox-group">
+                    <input asp-for="@Model.Form.RememberMe" />
+                    <span asp-validation-for="@Model.Form.RememberMe"></span>
+                    <label asp-for="@Model.Form.RememberMe"></label>
+                </div>
+
+                <button id="form-button" class="btn-theme-s">Sign In</button>
+
+                <a id="forgot-password" asp-page="/forgot">Forgot your password?</a>
+
+                <hr>
+
+                <div id="external-signin">
+                    <a class="btn-gray" asp-page="/external/google"><i class="fa-brands fa-google"></i>Google</a>
+                    <a class="btn-gray" asp-page="/external/facebook"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>

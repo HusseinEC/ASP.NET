@@ -1,0 +1,57 @@
+#signin {
+    height: 100%;
+    width: 40%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        form {
+
+            .content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "email" "password" "remember" "button" "forgot" "hr" "external";
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-remember {
+                    grid-area: remember;
+                }
+
+                #form-button {
+                    grid-area: button;
+                }
+
+                #form-forgot {
+                    grid-area: forgot;
+                    margin: 1rem 0 0 0;
+                    text-align: center;
+                }
+
+                hr {
+                    grid-area: hr;
+                }
+
+                #external-signin {
+                    grid-area: external;
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}

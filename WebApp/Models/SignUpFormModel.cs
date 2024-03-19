@@ -42,7 +42,7 @@ namespace WebApp.Models
         [Display(Name = "I agree to the Tearms & Conditions")]
         [CheckBoxRequired(ErrorMessage = "You must agree to the terms & conditions")]
 
-        public bool Terms { get; set; }
+        public bool Terms { get; set; } = false;
     }
 }
 
