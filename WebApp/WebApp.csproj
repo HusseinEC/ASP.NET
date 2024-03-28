@@ -12,14 +12,41 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <None Include="wwwroot\css\Scss\Components\_buttons.scss" />
+    <None Include="wwwroot\css\Scss\Components\_forms.scss" />
+    <None Include="wwwroot\css\Scss\Components\_links.scss" />
+    <None Include="wwwroot\css\Scss\Core\_base.scss" />
+    <None Include="wwwroot\css\Scss\Core\_colors.scss" />
+    <None Include="wwwroot\css\Scss\Core\_media.scss" />
+    <None Include="wwwroot\css\Scss\Core\_typography.scss" />
+    <None Include="wwwroot\css\Scss\Section\_footer.scss" />
+    <None Include="wwwroot\css\Scss\Section\_header.scss" />
+    <None Include="wwwroot\css\Scss\Section\_signin.scss" />
+    <None Include="wwwroot\css\Scss\Section\_signup.scss" />
+    <None Include="wwwroot\css\Scss\_components.scss" />
+    <None Include="wwwroot\css\Scss\_core.scss" />
+    <None Include="wwwroot\css\Scss\_section.scss" />
+    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\css\site.min.css" />
+    <None Include="wwwroot\css\site.scss" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="css\Scss\Components\" />
-    <Folder Include="css\Scss\Core\" />
-    <Folder Include="css\Scss\Section\" />
+    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\Images\Brands\" />
     <Folder Include="wwwroot\Images\Icons\" />
+    <Folder Include="wwwroot\Images\profiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

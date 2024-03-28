@@ -6,9 +6,15 @@
 
 <section id="signin">
     <div class="container">
+        @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+        {
+            <div class="alert">
+                @ViewData["ErrorMessage"]
+            </div>
+        }
         <form method="post">
             <h1>Welcome Back</h1>
-            <p>Don't have an account yet? <a asp-page="/SignIn">Sign Up here</a></p>
+            <p>Don't have an account yet? <a asp-page="/SignUp">Sign Up here</a></p>
 
             <div class="content">
                 <div id="form-email" class="input-group">
