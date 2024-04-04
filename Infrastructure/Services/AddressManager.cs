@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Contexts;
 using Infrastructure.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Services;
 
@@ -7,10 +8,10 @@ public class AddressManager(AppDbContext context)
 {
     private readonly AppDbContext _context = context;
 
-    public async Task<AddressEntity> GetAddressEntity(string UserId)
+    public async Task<UserEntity> GetAddressEntity(string UserId)
     {
-        var addressEntity = await _context.Addresses.FirstOrDefault(x => x.UserId == UserId);
-        return addressEntity!;
+        var user = await _context.Users.Include(x => x.Address).FirstOrDefaultAsync(x => x.Id == UserId);
+        return user!;
     }
 
     public async Task<bool> CreateAddressAsync(AddressEntity entity)
@@ -20,12 +21,12 @@ public class AddressManager(AppDbContext context)
         return true;
     }
 
-    public async Task<bool> UpdateAddressAsync(AddressEntity entity)
+    public async Task<bool> UpdateAddressAsync(string UserId)
     {
-        var existing = await _context.Addresses.FirstOrDefault(x => x.UserId == entity.UserId);
+        var existing = await _context.Users.Include(x => x.Address).FirstOrDefaultAsync(x => x.Id == UserId);
         if (existing != null)
         {
-            _context.Entry(existing).CurrentValues.SetValues(entity);
+            _context.Entry(existing).CurrentValues.SetValues(UserId);
             await _context.SaveChangesAsync();
             return true;
         }

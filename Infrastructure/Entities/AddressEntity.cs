@@ -2,7 +2,7 @@
 
 public class AddressEntity
 {
-    public int Id { get; set; }
+    public int UserId { get; set; }
 
     public string StreetName { get; set; } = null!;
 
